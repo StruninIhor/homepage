@@ -17,7 +17,7 @@ on:
     types: [created]
   push:
     branches:
-    - master
+    - feature/azure-actions
 
 env:
   AZURE_WEBAPP_NAME: resume    # set this to your application's name
