@@ -41,7 +41,7 @@ jobs:
       run: |
         workbox generateSW workbox-config.js
     - name: Azure Login
-      uses: Azure/login@v1
+      uses: azure/actions/login@v1
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
