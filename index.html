@@ -33,13 +33,43 @@
 	<link rel="manifest" href="./manifest.json"> -->
 	<link rel="me" href="https://www.fb.com/ihor.strunin" type="text/html">
 	<link rel="me" href="mailto:strunin.ihor@gmail.com">
-	<link rel="me" href="skype:strunin.ihor">
+  <link rel="me" href="skype:strunin.ihor">
+  <script src="scripts/random-star-wars-quotes.js"></script>
 	<!-- <link rel="me" href="tel:+380952600797"> -->
 	<!-- <link rel="stylesheet" href="./assets/stylesheets/base.css"> -->
     <meta charset="UTF-8" />
     <title>Résumé</title>
   </head>
   <body>
+    <script type="text/javascript">
+    var audio = void 0;
+    function ready() {
+      //Just was lazy to add each title for each summary
+      var a = document.getElementsByClassName('summary');
+      for (let i = 0; i < a.length; i++) {
+        a[i].title = "Тицніть, щоб розгорнути";
+      }
+
+    }
+    document.addEventListener("DOMContentLoaded", ready);
+    function playGOT() {
+        if (audio == void 0) {
+          audio = new Audio('/assets/game_of_thrones.mp3');
+        }
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    
+    </script>
+    <style>
+      .easter-egg {
+        font-size: medium;
+        color: rgb(28, 211, 214)
+      }
+    </style>
     <main>
       <article>
         <div class="page" style="border-color: midnightblue;">
@@ -125,7 +155,7 @@
                   <div class="sixteen wide column">
                     <h2>Резюме</h2>
                     <p>
-                      Привіт, я студент 4 курсу в кафедри систем технічного захисту інформаціі ФТІ НТУУ "КПІ" (з недавнього часу - КПІ ім. Ігоря Сікорського). Також я фул-стек розробник. Основний стек, яким користуюсь сьогодні - ASP.NET Core + Angular 8 / 9. Також цікавить програмування плат типу Raspberrypi, Arduino, тощо. 
+                      Привіт, я студент 4 курсу кафедри систем технічного захисту інформаціі ФТІ НТУУ "КПІ" (з недавнього часу - КПІ ім. Ігоря Сікорського). Також я фул-стек розробник. Основний стек, яким користуюсь сьогодні - ASP.NET Core + Angular 8 / 9. В вільний час пишу програми для плат типу Raspberrypi, Arduino, тощо. 
                     </p>
                   </div>
                 </div>
@@ -138,17 +168,201 @@
             </div>
             <div class="row">
               <div class="ten wide column">
-                <!-- Experience -->
+                <h3>Досвід</h3>
+                <h6>Recent</h6>
+                <ul class="timeline">
+                  <!-- Events -->
+                  <li>
+                    <p><em> Квітень 2020</em></p>
+                    <ul>
+                      <li class="details">
+                        <input type="checkbox" id="other">
+                        <label for="other" class="summary"><p><strong>Приймав участь як Full-stack developer </strong> в <strong> конкурсі <a href="javascript:alert('На жаль, сайт видалили. Чому - не знаю :/\nМоже місце вирішили економити після закінчення конкурсу');">#HackCorona 2020</a> в команді <i>"Допоможу"</i></strong>
+                        </p></label>
+                        <div>
+                          <ul>
+                            <li>Займався розробкою MVP продукту</li>
+                            <li>Комунікував із волонтерськими організаціями при проведені дослідження</li>
+                            <li>Ми не виграли, але отримали нові знайомства та познайомились із дійсно крутими проектами</li>
+                            <li>Ось фінальний пітч із нашим лідером Іллею:
+                              <!-- Ihor is sorry for that code. I know that future me will that bad styling -->
+                            <iframe width="100%" height="300rem" src="https://www.youtube.com/embed/JiFuun3tqdY?start=2971" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="highlighted">
+                    <p><em>18 березня 2019 &ndash; зараз </em></p>
+                    <p><strong>Full Stack Developer</strong> в <strong><a href="http://breeze-soft.com/" rel="external" target="_blank">Breeze-soft</a></strong><br></p>
+                    <ul>
+                        <li>Фіксив баги (свої теж 😁), розробляв нову функціональність, в основному із Azure DevOps та Azure Web Services. Також працював із docker та docker-compose</li>
+                          <li>Працював із такими системами управління БД, як MS SQL and PostgreSQL. Також із бібліотеками для об'єктно реляційних моделей БД - Entity Framework та Entity Framework Core</li>
+                          <li>Вивчав і зараз вивчаю GIS-технології</li>
+                          <li>Писав та читав(в основному читав) документацію. На собі відчув всі плюси, мінуси та різницю Scrum та Kanban.</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h6>Back then</h6>
+                <ul>
+                  <li class="details">
+                    
+                    <input type="checkbox" id="kpi-telecom">
+                    <label for="kpi-telecom" class="summary">
+                      <p> Лютий 2018 &ndash; 28 січня 2019</em></p>
+                      Технічна підтримка КПІ-Телеком 🙋</label>
+                    <div>
+                      <ul>
+                        <li>Технічна підтримка при виникненні проблем із зв'язком із інтернетом</li>
+                        <li>В тому числі <em>іноземних</em> студентів (в основному на англійській, але були випадки і іспанською)</li>
+                        <li>Створив <a href="https://t.me/kpitelecom" rel="external" target="_blank">телеграм канал</a> для КПІ-Телекому</li>
+                        <li>Почав роботу над <a href="https://t.me/kpi_telecom_bot" rel="external" target="_blank">телеграм-ботом</a> для тех-підтримки, не закінчив, того що пішов працювати в Breeze-soft. Цього літа, планую здати диплом, та закінчити проект, якщо вийде</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <hr>
+                  <li class="details">
+                    <input type="checkbox" id="dixi">
+                    <label for="dixi" class="summary">
+                      <p> Вересень 2017 &ndash; Лютий 2018</em></p>Студентська команда <a href="https://dixi.education/" rel="external" target="_blank">DIXI Education</a></label>
+                    <div>
+                      <ul>
+                        <li>Із командою студентів з кафедри <a href="http://ptmip.ipt.kpi.ua/wp-content/uploads/sites/6/2017/12/Izobrazhenie11.jpg" rel="external" target="_blank">приймали участь</a>  виставках <a href="http://www.innovosvita.com.ua/">"Інноватика в сучаній освіті" та "World Edu"</a></li>
+                        <li>Робив всякі хімічні експерименти із датчиками:
+                          <iframe width="100%" height="300rem" src="https://www.youtube.com/embed/egnhXmO6yus?start=83&end=112" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <h3>Освіта</h3>
+                <ul class="timeline">
+                  <li>
+                    <p>2016 &ndash; зараз </p>
+                    <p><strong>Навчаюсь в НТУУ "КПІ ім. Ігоря Сікорського" 🎓.</a></strong></p>
+                  </li>
+                  <li>
+                    <p>2007 &ndash; 2015 роки </p>
+                    <p><strong>Навчався в музикальній школі №7 ім. І. Шамо</a></strong></p>
+                    <ul>
+                      <li>Скрипка 🎻</li>
+                      <li>Фортепіано 🎹</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>2004 &ndash; 2016 роки </p>
+                    <p><strong>Навчався в <a href="http://153.kiev.ua" rel="external" target="_blank">гімназії №153 ім. О.С. Пушкіна</a></strong>
+                    </p>
+                    <ul>
+                      <li class="details">
+                        <input type="checkbox" id="gymnasium">
+                        <label for="gymnasium" class="summary"><p><strong>Приймав участь та займав призові місця в таких олімпіадах:</strong>
+                        </p></label>
+                        <div>
+                          <ul>
+                            <li>Фізика</li>
+                            <li>Хімія</li>
+                            <li>Математика</li>
+                            <li>Російська мова (навіть така була)</li>
+                            <ul>(тут навіть лінка 
+                              <a href="http://153.kiev.ua/files/2013-2014_Olympiad_results.pdf" rel="external" target="_blank">із документом</a> збереглась)</ul>
+                          </ul>
+                        </div>
+                      </li>                      
+                    </ul>
+                    
+                  </li>
+                
+                </ul>
               </div>
+             
               <div class="six wide column">
-                <!-- Languages -->
-                <!-- Skills -->
-                <!-- Character -->
-                <!-- Likes -->
-                <!-- Dislikes -->
-                <!-- Wants -->
-                <!-- Education -->
-                <!-- Articles -->
+                <section>
+                  <h3>Мови</h3>
+                  <p class="tags small"><a href="#" hreflang="uk" rel="alternate" class="language" lang="uk">&#x1f1fa;&#x1f1e6; <span>УКРАЇНСЬКА</span></a> <a href="javascript:alert('Will be implemented soon!')" hreflang="ru" rel="alternate" class="language" lang="ru">&#x1f1f7;&#x1f1fa; <span>РУССКИЙ</span></a> <a href="javascript:alert('Will be implemented soon!')" class="language" lang="en">&#x1f1fa;&#x1f1f8; ENGLISH</a></p>
+                </section>
+                <section>
+                  <h3>Навички</h3>
+                  <p class="tags small"><span class="nowrap">NET Framework</span>, <span class="nowrap">.NET Core</span>, <span class="nowrap">Razor pages</span>,
+                    ASP.NET, ASP.NET Core 2.x-3.x, Angular 8+, JQuery, SQL, T-SQL,  MS SQL Server, PostgreSQL, SQLite, xUnit, NUnit, Entity Framework, Entity Framework Core (with Fluent API / Data annotations attributes), GitLab,  Azure DevOps, docker, docker-compose, Cybersecurity
+                </section>
+                <section>
+                  <h3>Характер</h3>
+                  <p class="tags small">Спокійний, люблю вивчати щось нове, реаліст, трохи проктрастиную (коли можна). Іноді прискіпливий до деталей<p>
+                </section>
+                <section>
+                  <h3>Вподобання&#x1f603;</h3>
+                  <p class="tags small"><a href="javascript:generateQuote();" class="easter-egg">Star wars</a>, Піцца, Dev jokes, <a href="javascript:playGOT()" class="easter-egg">Game Of Thrones</a> 😃, Witcher, Київ, Класична музика, Класичний рок.</p>
+                  <p class="tags small">
+                    <li class="details">
+                      <input type="checkbox" id="experiments">
+                        <label for="experiments" class="summary"><p><strong>В школі любив хімічні експерименти (ось пару вибухів🔥):</strong>
+                        </p></label>
+                        <div>
+                          <ul>
+                            <li>
+                              <iframe width="100%" height="300rem" src="https://www.youtube.com/embed/85JKmjkP550?start=0&end=4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                              </li>
+                            <li>
+                              <iframe width="100%" height="300rem" src="https://www.youtube.com/embed/1gidTgpkTmw?start=41&end=45" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                              </li>
+                          </ul>
+                        </div>
+                  </li>
+                  </p>
+                </section>
+                <section>
+                  <h3>Бажання&#x1f97a;</h3>
+                  <p class="tags small bulleted"><span class="tag">Знайти оптимальний варіант тайм-менеджменту</span><span class="tag">Поїхати в гори в Турцію на Lucian Way</span><span class="tag">Зробити систему управління теплицею (дивне бажання)</span><span class="tag">Поїхати в Індію</span><span class="tag">Почати та повністю закінчити роботу над інді-проектом</span>
+                </section>
+                <section>
+                  <h3>Education</h3>
+                  <ul class="timeline">
+                    <li>
+                      <div><em>Кожен день</em></div>
+                      <p class="tags bulleted">
+                        <span class="tag"><a href="https://github.com/" rel="external" target="_blank"><strong>GitHub</strong></a></span>
+                        <span class="tag"><a href="https://www.linkedin.com/learning" rel="external"  target="_blank"><strong>LinkedIn Learning</strong></a></span>
+                        <span class="tag"><a href="https://t.me/dncuug" rel="external" target="_blank"><strong>devdigest // net core</strong></a></span>
+                        <span class="tag"><a href="https://t.me/msdevru" rel="external" target="_blank"><strong>Microsoft Developer Community</strong></a></span>
+                        <span class="tag"><a href="https://medium.com/" rel="external" target="_blank"><strong>Medium</strong></a></span>
+                        <span class="tag"><a href="https://www.coursera.org/" rel="external" target="_blank"><strong>Coursera</strong></a></span>
+                        <span class="tag"><a href="https://prometheus.org.ua/" rel="external" target="_blank"><strong>Prometheus</strong></a></span>
+                      </p>
+                    </li>
+                    <li>
+                      <div><em>Грудень 2019 &ndash; Квітень 2020</em></div>
+                      <!-- https://www.linkedin.com/in/strunin-ihor#certifications-section does not seems to work -->
+                      <div><strong>Сертифікати із ASP.NET Core, C# та тайм-менеджменту на</strong> на <a href="https://www.linkedin.com/in/strunin-ihor" rel="external" target="_blank"><strong>LinkedIn Learning</strong></a>
+                        <br>(Дивіться секцію "Licences and Certifications")</div>
+                    </li>
+                    <li>
+                      <div><em>1 вересня 2004 &ndash; Квітень 2016</em></div>
+                      <div><strong>Атестат про закінчення школи</strong></div>
+                    </li>
+                  </ul>
+                </section>
+                <section>
+                  <h3>Articles</h3>
+                  <p>
+                    <ul>
+                      <li>
+                        Strunin I. V. Hardware Protection from Unauthorized Access / I. V. Strunin, M. B. Yarysh // Science and Technology of the XXI Century : the XІХ All-Ukrainian Students
+                        R&D Conference Proceeding, (Kyiv, November 29, 2018) / National Technical
+                        University of Ukraine ‗Igor Sikorsky Kyiv Polytechnic Institute‘. –
+                        Part III. – Kyiv, 2018. – 212 p
+                      </li>
+                      <li>
+                        Струнін І. В. ІНФОРМАЦІЙНА ВІЙНА ЯК МЕГАТРЕНД 21 СТОЛІТТЯ / І. В. Струнін, М. Б. Яриш // Великі війни, великі трансформації, 1918-2018 роки: конфлікти та мир у
+                        ХХ і ХХІ сторіччях : Матеріали IX міжнародної наук.-практ. конф. (м. Київ,
+                        26-27 листопада 2018 р.) / Укладачі А.А. Мельниченко, П.В. Кутуєв,
+                        А.О. Хом’як. Київ, 2018. 276 с.
+                      </li>
+                    </ul>
+                  </p>
+                </section>
               </div>
             </div>
           </div>
