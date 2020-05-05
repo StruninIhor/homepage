@@ -35,12 +35,12 @@ steps:
   displayName: 'Get the deploy key'
 
 - script: |
-  mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa
-  chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
-  ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-  git remote set-url --push origin git@github.com:StruninIhor/struninihor.github.io/homepage.git
-  git push origin HEAD:feature/azure-pipelines
-displayName: 'Publish GitHub Pages'
-condition: |
-  and(not(eq(variables['Build.Reason'], 'PullRequest')),
-      eq(variables['Build.SourceBranch'], 'refs/heads/feature/azure-pipelines'))
+    mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa
+    chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
+    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+    git remote set-url --push origin git@github.com:StruninIhor/struninihor.github.io/homepage.git
+    git push origin HEAD:feature/azure-pipelines
+  displayName: 'Publish GitHub Pages'
+  condition: |
+    and(not(eq(variables['Build.Reason'], 'PullRequest')),
+        eq(variables['Build.SourceBranch'], 'refs/heads/feature/azure-pipelines'))
