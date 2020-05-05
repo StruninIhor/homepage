@@ -22,12 +22,12 @@ steps:
 - script: |
     workbox generateSW workbox-config.js
   displayName: 'workbox generate service worker'
-  - script: |
-  git config --local user.name "Azure Pipelines"
-  git config --local user.email "azuredevops@microsoft.com"
-  git add .
-  git commit -m "Publishing GitHub Pages  ***NO_CI***"
-displayName: 'Build and commit pages'
+- script: |
+    git config --local user.name "Azure Pipelines"
+    git config --local user.email "azuredevops@microsoft.com"
+    git add .
+    git commit -m "Publishing GitHub Pages  ***NO_CI***"
+  displayName: 'Build and commit pages'
 
 - task: DownloadSecureFile@1
   inputs:
